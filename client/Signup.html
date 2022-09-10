@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Intimité bank-Sign-Up</title>
+    <link rel="icon" href="Images/13-removebg-preview.ico" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <script>
+
+      const handleClick = async () =>{
+
+        const form={
+          fName: document.getElementById('sFName').value,
+          lName: document.getElementById('sLName').value,
+          email: document.getElementById('sEmail').value,
+          password: document.getElementById('sPass').value
+        }
+
+        console.log(form);
+
+        const response = await fetch('http://localhost:5000/signup', {
+          method: 'POST',
+          // mode: 'same-origin',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="login1">
+      <form id="login" method="post" action="">
+        <div class="name1"><h2 class="h2">Sign-Up to intimité</h2></div>
+        <label><b>First Name: </b></label>
+        <input
+          type="text"
+          name="FirstName"
+          id="sFName"
+          placeholder="FirstName"
+        />
+        <br /><br />
+        <label><b>Last Name:</b></label>
+        <input type="text" name="LastName" id="sLName" placeholder="Lastname" />
+        <br /><br />
+        <label><b>Email-Id:</b></label>
+        <input
+          type="email"
+          name="Email-Id"
+          id="sEmail"
+          placeholder="Email-Id"
+        />
+        <br /><br />
+        <label><b>Password:</b></label>
+        <input
+          type="Password"
+          name="Password"
+          id="sPass"
+          placeholder="Password"
+        />
+        <br /><br />
+        <button
+          type="submit"
+          class="btn1"
+          name="button"
+          onclick="handleClick()"
+        >
+          <a href="Account.html"><b>Sign-Up</b></a>
+        </button>
+      </form>
+
+      <button onclick="handleClick()">Display</button>
+    </div>
+  </body>
+</html>
