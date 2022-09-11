@@ -20,7 +20,7 @@ mongoose.connect(process.env.DB)
 })
 
 
-//Welcome Route
+//Welcome routes
 app.get('/', (req, res) => {
     res.send('Welcome to the Net Banking Server !');
 });
